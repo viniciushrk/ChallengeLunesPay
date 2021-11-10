@@ -13,8 +13,8 @@
 }
 
 .logo{
-  width:300px;
-  height:300px;
+  width:240px;
+  height:240px;
 }
 
 .card{
@@ -22,7 +22,7 @@
   border-radius:15px;
   background-color: #fff;
   height: 50%;
-  width: 60%;
+  width: 55%;
 }
 
 .cardHeader{
@@ -31,4 +31,69 @@
     margin:0;
     font-weight: bold;
   }
+}
+
+
+
+.containerDatatable{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  flex-direction: column;
+}
+
+.adressCoin{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin-bottom: 10px;
+
+  input{
+    background:#fff;
+    border:0;
+    color:black;
+    font-weight: bold;
+    padding: 0 2px;
+    
+    width: 100%;
+    height: 72px;
+
+    border-radius: 10px 0px 0px 10px;
+    
+  }
+
+  input:placeholder{
+    color:black;
+    padding: 2px;
+  }
+
+  button{
+    font-weight: bold;
+    
+    height: 74px;
+    width:20%;
+    border: none;
+    background-color: #04D361;
+    color: #fff;
+
+    cursor:pointer;
+
+    border-radius: 0px 10px 10px 0px;
+  }
+
+  
+  button:hover{
+    
+    background-color: #0c9248;
+  }
+}
+
+.bodyDataTable{
+  padding: 30px;
+  border-radius:15px;
+  background-color: #fff;
+  height: 50%;
+  width: 90%;
 }

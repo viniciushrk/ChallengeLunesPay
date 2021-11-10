@@ -5,7 +5,7 @@ import api from "../../config/Api";
 import fifaLogo from "../../public/fifa_white.svg";
 import Arrow from "../../public/Arrow.png";
 import { useHistory } from 'react-router-dom';
-import FilterService from '../../services/FilterService';
+import FilterService from '../../services/ConvertTimestampToDate';
 import OptionFilterService from '../../services/OptionFilterService';
 
 
@@ -52,8 +52,7 @@ function Home() {
   async function navigateToPage(page: number) {
 
     try {     
-      const players = await FilterService(filter,inputValue,inputExclusivo, page);
-      setPlayers(players);
+
 
     } catch (err) {
       setInputError('Ops! houve algum erro.');
@@ -71,9 +70,7 @@ function Home() {
     }
     try {
 
-      const players = await FilterService(filter,inputValue,inputExclusivo, 2);
-      setPlayers(players);
-      setInputError(null);
+     
     } catch (err) {
       setInputError('Ops! houve algum erro.');
     }
@@ -95,62 +92,7 @@ function Home() {
       </div> 
 
       
-      <form onSubmit={handleAddRepository} className={style.container_search} >
-        
-        <div className={style.container_filter}>
-            <select name="filter" id="filter" value={filter} onChange={(e) => {handleSearchSelect(e)}}>
-              <option value="0">Select filter</option>
-              <option value="1">List players by team</option>
-              <option value="2">List players by league</option>
-              <option value="3">List players by nationality</option>
-              <option value="4">List players by position</option>
-              <option value="5">List top-K players</option>
-              <option value="6">List top-K players by position</option>
-              <option value="7">List top-K players by nationality</option>
-              <option value="8">List top-K players by league</option>
-              <option value="9">List the best team</option>
-              <option value="10">List the best team by league</option>
-              <option value="11">List the best team by nationality</option>
-            </select>
-          </div> 
-        <div className={style.content_search}>
-          {
-            filter === 0 || (filter >= 5 && filter !== 10 && filter !== 11)    ? 
-              <input 
-                type="text" 
-                placeholder="Digite um valor" 
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-              />
-            :   
-
-              <select name="filter" id="filter" className={style.selectFilter} value={inputValue} onChange={(e) => {setInputValue(e.target.value)}}>
-                {dataOption.map((x)=>{return <option key={x.item.toString()} value={x.item.toString()} >{x.item}</option>})}
-              </select>
-          }
-          
-          {
-            filter >= 6 && filter !== 10 && filter !== 11   ?
-              <select name="filter" id="filter" className={style.selectFilter} value={inputExclusivo} onChange={(e) => {setInputExclusivo(e.target.value)}}>
-                {dataOption.map((x)=>{return <option key={x.item.toString()} value={x.item.toString()} >{x.item}</option>})}
-              </select>
-            : null
-          }
-
-          <button >Pesquisar</button>
-        </div>
-
-        {
-          players === null || inputError !== null ?
-            <div>
-              <p className={style.text_red} >{ players === null ? "Nenhum dado encontrado."  : inputError}</p>
-            </div>  
-          : 
-          null
-        }
-        
-          
-      </form>
+      
 
      
 
@@ -181,7 +123,7 @@ function Home() {
       {
         filter < 6 ?
           <div className={style.paginate}>
-            <button onClick={()=>{navigateToPage(players?.prevPage ?? 1)}} >{"<"}</button>
+            {/* <button onClick={()=>{navigateToPage(players?.prevPage ?? 1)}} >{"<"}</button> */}
             <button onClick={()=>{navigateToPage(players?.nextPage ?? 1)}} >{">"}</button>
           </div>
         :

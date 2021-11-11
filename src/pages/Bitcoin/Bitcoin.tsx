@@ -2,7 +2,6 @@ import style from "./Bitcoin.module.scss"
 import bitcoinIcon from "./bitcoin.png";
 import Dashboard from "../../components/Dashboard/Dashboard";
 import DataTable from "../../components/Datatable/Datatable";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 // 17JzE6xsyu4kZbLosvAKUXHdbU9arAp8Uf
 

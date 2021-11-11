@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 // 17JzE6xsyu4kZbLosvAKUXHdbU9arAp8Uf
 
 function Bitcoin(){
-    useEffect( () => {console.log("http://bitcoin.org/")},[])
     return (
         <div className={style.App}>
             <div className={style.contentOption}>
@@ -16,7 +15,7 @@ function Bitcoin(){
                     <Link to="/litecoin" className={style.unable} >Litecoin</Link>
                 </div>
             </div>
-            <Dashboard icon={bitcoinIcon} coin={"BTC"} sites="http://bitcoin.org/"  />
+            <Dashboard icon={bitcoinIcon} coin={"BTC"} sites="https://bitcoin.org/"  />
             <DataTable coin={"BTC"} />
         </div>
     );

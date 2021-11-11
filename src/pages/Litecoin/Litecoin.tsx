@@ -15,7 +15,7 @@ function Litecoin(){
                     <Link to="/litecoin" className={style.enable} >Litecoin</Link>
                 </div>
             </div>
-            <Dashboard icon={litecoinIcon} coin={"LTC"} sites="http://litecoin.org/"  />
+            <Dashboard icon={litecoinIcon} coin={"LTC"} sites="https://litecoin.org/"  />
             <DataTable coin={"LTC"} />
         </div>
     );

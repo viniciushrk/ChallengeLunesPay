@@ -5,6 +5,6 @@
 # Para iniciar
 Para testar basta rodar os comandos:
 
-*`yarn`
+* `yarn`
 
 * `yarn start`

@@ -1,0 +1,43 @@
+.containerBitCoin{
+  display: flex;
+  align-items:center;
+  justify-content:space-evenly;
+  margin-top: 150px;
+}
+
+
+  
+.logo{
+  width:240px;
+  height:240px;
+}
+
+
+
+.card{
+  padding: 30px;
+  border-radius:15px;
+  background-color: #fff;
+  height: 50%;
+  width: 55%;
+}
+
+@media only screen and (max-width: 768px) {
+  .containerBitCoin{
+    flex-direction: column;
+  }
+  .logo{
+    margin: 10px;
+  }
+  .card{
+    width: 90%;
+  }
+}
+
+.cardHeader{
+  margin-bottom: 15px;
+  p{
+    margin:0;
+    font-weight: bold;
+  }
+}

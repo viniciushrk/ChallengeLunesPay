@@ -46,9 +46,13 @@ function DataTable(data: DataProp){
             if(data.data.status === "success"){
                 let valor = data.data.data.txs;
                 
-                valor.map((x:Wallet) => {
-                   x.time =  ConvertTimestampToDate(x.time)
-                })
+                if(valor !== undefined && valor){
+                    // eslint-disable-next-line array-callback-return
+                    valor.map((x:Wallet) => {
+                        x.time =  ConvertTimestampToDate(x.time)
+                     })
+                }
+                
 
                 setWallet(valor)      
             }
